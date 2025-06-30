@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo Interativo - Pensão Alimentícia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #40001E;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .game-container {
+      background-color: #E2889B;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #40001E;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .choices button:hover {
+      background-color: #5c002a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="game-container">
+  <h1>Decida o que fazer!</h1>
+  <p id="scenario">Seu ex-cônjuge não está pagando a pensão. O que você faz?</p>
+  <div class="choices">
+    <button onclick="makeChoice(0)">a) Deixa para lá</button>
+    <button onclick="makeChoice(1)">b) Procura ajuda jurídica</button>
+    <button onclick="makeChoice(2)">c) Briga com ele(a)</button>
+  </div>
+</div>
+
+<script>
+  const scenarios = [
+    {
+      question: "Seu ex-cônjuge não está pagando a pensão. O que você faz?",
+      choices: [
+        "Você pode ter dificuldades financeiras. Não fazer nada pode prejudicar a criança.",
+        "Ótima decisão! A Defensoria Pública pode ajudar. A lei está ao seu lado.",
+        "Conflitos podem agravar a situação. Busque ajuda legal!"
+      ]
+    },
+    {
+      question: "Você está em processo de pedir pensão. O que faz primeiro?",
+      choices: [
+        "Ótimo! Um advogado poderá orientar adequadamente.",
+        "Pode ser difícil sozinho. Melhor buscar ajuda jurídica.",
+        "Sem agir, o processo não avança e você perde tempo."
+      ]
+    },
+    {
+      question: "O juiz determinou a pensão, mas ele não paga. O que você faz?",
+      choices: [
+        "O problema continua e você não recebe o valor devido.",
+        "Correto! Você pode pedir a execução judicial para obrigar o pagamento.",
+        "Ameaças podem te prejudicar e não resolvem o problema."
+      ]
+    }
+  ];
+
+  let currentScenario = 0;
+
+  function makeChoice(choiceIndex) {
+    const response = scenarios[currentScenario].choices[choiceIndex];
+    document.getElementById('scenario').innerText = response;
+
+    setTimeout(() => {
+      currentScenario++;
+      if (currentScenario < scenarios.length) {
+        showScenario();
+      } else {
+        document.getElementById('scenario').innerText = "Fim do jogo! Você aprendeu sobre pensão alimentícia!";
+        document.querySelector('.choices').innerHTML = '<button onclick="restartGame()">Jogar novamente</button>';
+      }
+    }, 2000);
+  }
+
+  function showScenario() {
+    document.getElementById('scenario').innerText = scenarios[currentScenario].question;
+  }
+
+  function restartGame() {
+    currentScenario = 0;
+    showScenario();
+    document.querySelector('.choices').innerHTML = `
+      <button onclick="makeChoice(0)">a) Deixa para lá</button>
+      <button onclick="makeChoice(1)">b) Procura ajuda jurídica</button>
+      <button onclick="makeChoice(2)">c) Briga com ele(a)</button>
+    `;
+  }
+</script>
+
+</body>
+</html>

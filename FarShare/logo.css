@@ -1,0 +1,22 @@
+.logo-container {
+  background-color: #40001E; 
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+
+}
+
+.logo-container img {
+  max-width: 300px;
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+}
