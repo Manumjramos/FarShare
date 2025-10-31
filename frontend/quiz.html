@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Pensão Alimentícia</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <header>
+    <h1>📝 Quiz sobre Pensão Alimentícia</h1>
+    <p class="subtitle">Teste seus conhecimentos de forma interativa!</p>
+  </header>
+
+<div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Biblioteca" data-page="biblioteca.html">📚</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+  <i title="Glossário" data-page="glossario.html">📖</i>
+  <i title="Mitos e verdades" data-page="mitos_e_verdades.html">❓</i>
+  <i title="Linha do tempo" data-page="linha_do_tempo.html">📌</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Perfil do usuário" data-page="pagina_de_perfil.html">👤</i>
+</div>
+
+  <main>
+    <div class="quiz-container">
+      <div id="quiz-card" class="card">
+        <h3 id="question"></h3>
+        <div class="options"></div>
+        <div id="feedback" class="feedback"></div>
+        <button id="next-btn" class="next-btn">Próxima</button>
+        <button id="restart-btn" class="restart-btn">Refazer Quiz</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 - Quiz sobre Pensão Alimentícia</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const quizData = [
+        {question: "A pensão alimentícia inclui apenas alimentação?", options: ["Sim","Não"], answer: "Não"},
+        {question: "Quando o filho completa 18 anos, a pensão acaba automaticamente?", options: ["Sim","Não"], answer: "Não"},
+        {question: "Se o pai estiver desempregado, ele pode deixar de pagar pensão?", options: ["Sim","Não"], answer: "Não"},
+        {question: "O valor da pensão é sempre 30% do salário?", options: ["Sim","Não"], answer: "Não"},
+        {question: "Quem paga pensão pode participar da vida do filho normalmente?", options: ["Sim","Não"], answer: "Sim"}
+      ];
+
+      let currentQuestion = 0;
+      let score = 0;
+
+      const questionEl = document.getElementById('question');
+      const optionsEl = document.querySelector('.options');
+      const feedbackEl = document.getElementById('feedback');
+      const nextBtn = document.getElementById('next-btn');
+      const restartBtn = document.getElementById('restart-btn');
+
+      function loadQuestion() {
+        const currentQuiz = quizData[currentQuestion];
+        questionEl.textContent = currentQuiz.question;
+        optionsEl.innerHTML = '';
+        feedbackEl.textContent = '';
+        nextBtn.style.display = 'none';
+        restartBtn.style.display = 'none';
+
+        currentQuiz.options.forEach(option => {
+          const btn = document.createElement('button');
+          btn.textContent = option;
+          btn.className = 'option-btn';
+          btn.addEventListener('click', () => selectOption(option));
+          optionsEl.appendChild(btn);
+        });
+      }
+
+      function selectOption(selected) {
+        const currentQuiz = quizData[currentQuestion];
+        const buttons = document.querySelectorAll('.option-btn');
+        buttons.forEach(btn => btn.disabled = true);
+
+        if(selected === currentQuiz.answer){
+          feedbackEl.textContent = "✅ Correto!";
+          feedbackEl.style.color = "#27ae60";
+          score++;
+        } else {
+          feedbackEl.textContent = `❌ Errado! Resposta correta: ${currentQuiz.answer}`;
+          feedbackEl.style.color = "#e74c3c";
+        }
+        nextBtn.style.display = 'block';
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentQuestion++;
+        if(currentQuestion < quizData.length){
+          loadQuestion();
+        } else {
+          showScore();
+        }
+      });
+
+      restartBtn.addEventListener('click', () => {
+        currentQuestion = 0;
+        score = 0;
+        loadQuestion();
+      });
+
+      function showScore(){
+        questionEl.textContent = `🎉 Você acertou ${score} de ${quizData.length} perguntas!`;
+        optionsEl.innerHTML = '';
+        feedbackEl.textContent = '';
+        nextBtn.style.display = 'none';
+        restartBtn.style.display = 'block';
+      }
+
+      // Inicializa o quiz
+      loadQuestion();
+    });
+  </script>
+
+  <script>
+  // Adiciona um clique para cada ícone com o atributo data-page
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #D3B1C2;
+  color: #333A33;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #333A33;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 8px 0 20px;
+}
+
+/* Input de busca */
+#search-input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #333A33;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #333A33;
+}
+
+/* Glossary container */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.glossary-container {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Cards */
+.glossary-card {
+  background: #fff;
+   border-left: 6px solid #d19a30;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #333A33(0,0,0,0.08);
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glossary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px #333A33(0,0,0,0.12);
+}
+
+.glossary-card h3 {
+  font-size: 1.3rem;
+  color: #333A33;
+  margin-bottom: 10px;
+}
+
+.glossary-card p {
+  font-size: 1rem;
+  color: #333A33;
+  line-height: 1.4;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Container geral com barra lateral e conteúdo */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar i:hover {
+  transform: scale(1.2);
+  color: #D3B1C2;
+}
+
+/* Conteúdo principal ao lado da barra */
+.content {
+  flex: 1;
+  margin-left: 60px; /* Espaço para a sidebar */
+  padding: 20px;
+}
+
+

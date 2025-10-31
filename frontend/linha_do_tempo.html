@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linha do Tempo - Pensão Alimentícia</title>
+  <link rel="stylesheet" href="linha_do_tempo.css">
+</head>
+<body>
+  <header>
+    <h1>📌 Linha do Tempo da Pensão Alimentícia</h1>
+    <p class="subtitle">Veja as etapas do processo de forma clara e organizada</p>
+  </header>
+
+   <div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Biblioteca" data-page="biblioteca.html">📚</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+  <i title="Glossário" data-page="glossario.html">📖</i>
+  <i title="Quiz" data-page="quiz.html">📝</i>
+  <i title="Mitos e verdades" data-page="mitos_e_verdades.html">❓</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Perfil do usuário" data-page="pagina_de_perfil.html">👤</i>
+</div>
+
+  <main>
+    <div class="cards-container">
+      <!-- Etapa 1 -->
+      <div class="card">
+        <div class="icon">👀</div>
+        <h3>Identificação da necessidade</h3>
+        <p>Perceber que há despesas do filho não cobertas.</p>
+      </div>
+
+      <!-- Etapa 2 -->
+      <div class="card">
+        <div class="icon">⚖️</div>
+        <h3>Busca de apoio jurídico</h3>
+        <p>Procurar Defensoria Pública ou advogado especializado.</p>
+      </div>
+
+      <!-- Etapa 3 -->
+      <div class="card">
+        <div class="icon">📄</div>
+        <h3>Ação judicial / pedido extrajudicial</h3>
+        <p>Entrar com processo ou acordo formal para definir a pensão.</p>
+      </div>
+
+      <!-- Etapa 4 -->
+      <div class="card">
+        <div class="icon">⏳</div>
+        <h3>Concessão de pensão provisória</h3>
+        <p>Juiz pode fixar um valor inicial enquanto o processo continua.</p>
+      </div>
+
+      <!-- Etapa 5 -->
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Audiência de conciliação</h3>
+        <p>Tentar um acordo entre as partes antes da sentença final.</p>
+      </div>
+
+      <!-- Etapa 6 -->
+      <div class="card">
+        <div class="icon">🔨</div>
+        <h3>Sentença</h3>
+        <p>Juiz define o valor definitivo da pensão.</p>
+      </div>
+
+      <!-- Etapa 7 -->
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>Execução (se houver atraso)</h3>
+        <p>Cobrança judicial e possíveis medidas em caso de inadimplência.</p>
+      </div>
+
+      <!-- Etapa 8 -->
+      <div class="card">
+        <div class="icon">🔄</div>
+        <h3>Revisão</h3>
+        <p>Quando a renda ou necessidade do filho muda, é possível pedir revisão.</p>
+      </div>
+    </div>
+  </main>
+
+<script>
+  // Adiciona um clique para cada ícone com o atributo data-page
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+
+  <footer>
+    <p>© 2025 - Linha do tempo sobre Pensão Alimentícia</p>
+  </footer>
+</body>
+</html>

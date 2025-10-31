@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #D3B1C2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(90deg, #000000, #333A33);
+  color: #ffffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #ffffffff;
+}
+
+
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+   border-left: 6px solid #d19a30;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px) translateX(2px); /* leve flutuação */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.extra-text {
+  display: none;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.btn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background: #F9E085;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background:#D3B1C2;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  color: white;
+  margin-top: auto;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+

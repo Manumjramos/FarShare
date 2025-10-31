@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário Jurídico - Pensão Alimentícia</title>
+  <link rel="stylesheet" href="glossario.css">
+</head>
+<body>
+  <header>
+    <h1>📖 Glossário Jurídico</h1>
+    <p class="subtitle">Termos importantes sobre Pensão Alimentícia</p>
+    <input type="text" id="search-input" placeholder="Buscar termo...">
+  </header>
+
+ <div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Biblioteca" data-page="biblioteca.html">📚</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+  <i title="Quiz" data-page="quiz.html">📝</i>
+  <i title="Mitos e verdades" data-page="mitos_e_verdades.html">❓</i>
+  <i title="Linha do tempo" data-page="linha_do_tempo.html">📌</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Perfil do usuário" data-page="pagina_de_perfil.html">👤</i>
+</div>
+
+  <main>
+    <div class="glossary-container" id="glossary-container">
+      <!-- Cards de termos serão inseridos aqui via JS -->
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 - Glossário sobre Pensão Alimentícia</p>
+  </footer>
+
+  <script>
+    const glossary = [
+      {term: "Pensão Alimentícia", definition: "Valor pago regularmente pelo responsável para atender às necessidades do filho ou outro dependente."},
+      {term: "Guarda Compartilhada", definition: "Regime em que ambos os pais participam ativamente da vida do filho."},
+      {term: "Alimentos Provisórios", definition: "Valores pagos temporariamente até decisão final do processo judicial."},
+      {term: "Execução de Alimentos", definition: "Procedimento judicial para cobrar pensão que não foi paga."},
+      {term: "Maioridade Civil", definition: "Idade a partir da qual a pessoa é considerada legalmente adulta, geralmente 18 anos."},
+      {term: "Dívida Alimentícia", definition: "Valor de pensão que não foi pago dentro do prazo estipulado."},
+      {term: "Revisão de Alimentos", definition: "Pedido judicial para alterar o valor da pensão, de acordo com mudança nas necessidades ou renda."},
+      {term: "Tutela", definition: "Proteção legal de menores ou incapazes, em substituição aos pais quando necessário."},
+      {term: "Curatela", definition: "Regime legal de proteção de pessoas maiores incapazes de gerir sua própria vida financeira ou pessoal."},
+      {term: "Provimento Judicial", definition: "Decisão ou determinação do juiz dentro de um processo."},
+      {term: "Alimentos Gravídicos", definition: "Pensão destinada à gestante para cobrir necessidades durante a gravidez."},
+      {term: "Alimentos Suplementares", definition: "Valores pagos para complementar as necessidades básicas de quem recebe pensão."},
+      {term: "Alimentos Necessários", definition: "Valor mínimo essencial para sustento do beneficiário."},
+      {term: "Capacidade Contributiva", definition: "Avaliação da possibilidade financeira do responsável em pagar pensão."},
+      {term: "Conciliação", definition: "Tentativa de acordo entre as partes antes ou durante o processo judicial."},
+      {term: "Procedimento Sumário", definition: "Tramitação judicial mais rápida para casos de menor complexidade."},
+      {term: "Sentença", definition: "Decisão final do juiz sobre o caso apresentado."},
+      {term: "Tutela Provisória", definition: "Decisão temporária concedida pelo juiz antes do julgamento definitivo para proteger direitos urgentes."},
+      {term: "Honorários Advocatícios", definition: "Valores pagos ao advogado pelos serviços prestados."},
+      {term: "Liquidação de Sentença", definition: "Etapa do processo que define o valor exato a ser pago, após decisão judicial."},
+      {term: "Citação", definition: "Ato formal de chamar a parte envolvida para tomar ciência de um processo."},
+      {term: "Intimação", definition: "Comunicação formal para que a parte cumpra determinada obrigação ou compareça em juízo."},
+      {term: "Impenhorabilidade", definition: "Proteção legal que impede que certos bens essenciais sejam penhorados para pagamento de dívida."},
+      {term: "Alimentos Recíprocos", definition: "Obrigação de filhos prestarem pensão aos pais em caso de necessidade."},
+      {term: "Ação de Alimentos", definition: "Processo judicial para requerer pensão alimentícia."},
+      {term: "Procurador", definition: "Profissional legalmente habilitado a representar uma das partes no processo."},
+      {term: "Interdito", definition: "Pessoa declarada judicialmente incapaz de gerir sua própria vida, geralmente protegida por curador."},
+      {term: "Partilha de Bens", definition: "Divisão do patrimônio comum entre as partes após separação ou divórcio."},
+      {term: "Reconhecimento de Paternidade", definition: "Procedimento legal que estabelece oficialmente o vínculo entre pai e filho."},
+      {term: "Acordo Extrajudicial", definition: "Compromisso firmado entre as partes fora do processo judicial, geralmente homologado em cartório."},
+      {term: "Declaração de Hipossuficiência", definition: "Documento que declara que a parte não possui condições financeiras de arcar com custas judiciais."},
+      {term: "Alimentos Indiretos", definition: "Benefícios que substituem a pensão monetária, como moradia, transporte e educação."},
+      {term: "Exceção de Prejudicialidade", definition: "Questão jurídica que deve ser resolvida antes do julgamento principal."}
+    ];
+
+    const container = document.getElementById("glossary-container");
+    const searchInput = document.getElementById("search-input");
+
+    function displayGlossary(filteredGlossary) {
+      container.innerHTML = "";
+      filteredGlossary.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "glossary-card";
+        card.innerHTML = `<h3>${item.term}</h3><p>${item.definition}</p>`;
+        container.appendChild(card);
+      });
+    }
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      const filtered = glossary.filter(item => 
+        item.term.toLowerCase().includes(query) || item.definition.toLowerCase().includes(query)
+      );
+      displayGlossary(filtered);
+    });
+
+    // Inicializar com todos os termos
+    displayGlossary(glossary);
+  </script>
+  <script>
+  function goToPage(url) {
+    window.location.href = url;
+  }
+</script>
+<script>
+  // Seleciona todos os ícones da sidebar
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        // Redireciona para a página definida
+        window.location.href = page;
+      } else {
+        console.error('Página não definida para este ícone.');
+      }
+    });
+  });
+</script>
+<script>
+  // Adiciona um clique para cada ícone com o atributo data-page
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

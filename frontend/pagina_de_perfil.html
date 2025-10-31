@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do usuário</title>
+  <link rel="stylesheet" href="pagina_de_perfil.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Perfil do usuário</h1>
+      <button id="toggle-dark-mode">🌙</button>
+    </header>
+
+  <div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Biblioteca" data-page="biblioteca.html">📚</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Glossário" data-page="glossario.html">📖</i>
+  <i title="Quiz" data-page="quiz.html">📝</i>
+  <i title="Mitos e Verdades" data-page="mitos_e_verdades.html">❓</i>
+  <i title="Linha do tempo" data-page="linha_do_tempo.html">📌</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+</div>
+
+
+    <main>
+      <section class="user-info">
+        <h2>Informações do Usuário</h2>
+        <form id="userForm">
+          <label>Nome:</label>
+          <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+          <label>Email:</label>
+          <input type="email" id="email" placeholder="Digite seu email" required>
+
+          <label>Senha:</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+          <div class="buttons">
+            <button type="submit">Salvar</button>
+            <button type="button" id="editar">Editar</button>
+            <button type="button" id="excluir">Excluir</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="mensagens">
+        <h2>Mensagem para o WhatsApp</h2>
+        <textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
+        <button id="enviarMensagem">Enviar</button>
+      </section>
+
+
+  <script src="pagina_de_perfil.js"></script>
+
+  <script>
+  // Adiciona um clique para cada ícone com o atributo data-page
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+
+
+  <footer>
+    <p>© 2025 - Página do usuário</p>
+  </footer>
+</body>
+</html>

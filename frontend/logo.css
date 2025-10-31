@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #D3B1C2;
+}
+
+/* Container principal */
+.logo-container {
+  color: #333A33;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+}
+
+/* Título */
+.logo-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #4b1b2b;
+}
+
+/* Caixa de texto centralizada */
+.texto-caixa {
+  background-color: #ffffffff;
+  border-left: 6px solid #d19a30;
+  padding: 40px 60px;
+  border-radius: 25px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  max-width: 800px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Efeito de movimento ao passar o mouse */
+.texto-caixa:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem (logo) */
+.logo-container img {
+  max-width: 300px;
+  width: 90%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.08);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #000;
+  font-size: 0.9rem;
+  color: #ffffff;
+}

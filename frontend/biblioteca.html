@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca de Leis - Pensão Alimentícia</title>
+  <link rel="stylesheet" href="biblioteca.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Biblioteca de Leis - Pensão Alimentícia</h1>
+    <p>Aqui você encontra as principais leis relacionadas à pensão alimentícia.</p>
+  </header>
+
+  <div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+  <i title="Glossário" data-page="glossario.html">📖</i>
+  <i title="Quiz" data-page="quiz.html">📝</i>
+  <i title="Mitos e verdades" data-page="mitos_e_verdades.html">❓</i>
+  <i title="Linha do tempo" data-page="linha_do_tempo.html">📌</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Perfil do usuário" data-page="pagina_de_perfil.html">👤</i>
+</div>
+
+
+  <main>
+    <section class="lei">
+      <h2>Código Civil</h2>
+      <p><strong>Lei nº 10.406/2002</strong><br>
+      Estabelece o direito e os deveres relacionados aos alimentos, definindo quem pode solicitar e quem deve fornecer.</p>
+      <a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm" target="_blank" class="btn">Ver no Planalto</a>
+    </section>
+
+    <section class="lei">
+      <h2>Lei de Alimentos</h2>
+      <p><strong>Lei nº 5.478/1968</strong><br>
+      Define os procedimentos para a ação de alimentos, garantindo agilidade no processo.</p>
+      <a href="https://www.planalto.gov.br/ccivil_03/leis/l5478.htm" target="_blank" class="btn">Ver no Planalto</a>
+    </section>
+
+    <section class="lei">
+      <h2>Código de Processo Civil</h2>
+      <p><strong>Lei nº 13.105/2015</strong><br>
+      Detalha os trâmites judiciais, incluindo formas de execução e prisão em caso de não pagamento.</p>
+      <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm" target="_blank" class="btn">Ver no Planalto</a>
+    </section>
+
+    <section class="lei">
+      <h2>Lei dos Alimentos Gravídicos</h2>
+      <p><strong>Lei nº 11.804/2008</strong><br>
+      Trata do auxílio financeiro para cobrir despesas da gestante durante a gravidez.</p>
+      <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11804.htm" target="_blank" class="btn">Ver no Planalto</a>
+    </section>
+  </main>
+
+  <script>
+  // Adiciona um clique para cada ícone com o atributo data-page
+  document.querySelectorAll('.sidebar i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const page = icon.getAttribute('data-page');
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+
+  <footer>
+    <p>© 2025 - Biblioteca de leis sobre Pensão Alimentícia</p>
+  </footer>
+</body>
+</html>

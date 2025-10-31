@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitos e Verdades - Pensão Alimentícia</title>
+  <link rel="stylesheet" href="mitos_e_verdades.css">
+</head>
+<body>
+
+  <header>
+    <h1>❓ Mitos e Verdades</h1>
+    <p class="subtitle">Esclareça suas dúvidas sobre pensão alimentícia</p>
+  </header>
+
+<div class="sidebar">
+  <i title="Chat" data-page="segunda_pagina.html">💬</i>
+  <i title="Biblioteca" data-page="biblioteca.html">📚</i>
+  <i title="Casos reais" data-page="casos_reais.html">⚖️</i>
+  <i title="Glossário" data-page="glossario.html">📖</i>
+  <i title="Quiz" data-page="quiz.html">📝</i>
+  <i title="Linha do tempo" data-page="linha_do_tempo.html">📌</i>
+  <i title="Mapa" data-page="primeira_pagina.html">📍</i>
+  <i title="Perfil do usuário" data-page="pagina_de_perfil.html">👤</i>
+</div>
+
+  <main>
+    <div class="cards-container">
+      <!-- Mitos -->
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Pensão é só para comida.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Quando o filho faz 18 anos, a pensão acaba automaticamente.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Se o pai está desempregado, não precisa pagar pensão.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Só os pais precisam pagar pensão.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Quem paga pensão não precisa participar da vida do filho.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Se a mãe casa de novo, perde o direito à pensão para os filhos.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Pensão é só dinheiro, não cobre outros tipos de apoio.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>A mãe pode gastar a pensão como quiser.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Pensão é um “salário extra” para a mãe.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Quem paga pensão não pode dar presentes ou extras ao filho.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>O valor da pensão é sempre 30% do salário.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+
+      <div class="card mito" onclick="revelar(this)">
+        <h3 class="label">❌ Mito</h3>
+        <p>Se o filho trabalha de meio período, perde o direito à pensão.</p>
+        <button class="revelar">Clique para ver a verdade</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 - Mitos e verdades sobre Pensão Alimentícia</p>
+  </footer>
+
+  <script>
+    const verdades = [
+      "Pensão inclui saúde, educação, lazer, transporte e outras necessidades do filho.",
+      "Nem sempre. Se o filho ainda estuda ou não tem condições de se sustentar, a pensão pode continuar.",
+      "Mesmo desempregado, o responsável deve contribuir, proporcionalmente à sua realidade.",
+      "A obrigação pode recair sobre mães, avós e até outros parentes, dependendo da situação.",
+      "O direito à convivência é independente da pensão. O vínculo afetivo é igualmente importante.",
+      "O novo casamento da mãe não interfere na pensão destinada aos filhos, pois a obrigação é do pai.",
+      "A pensão pode incluir moradia, plano de saúde, escola, transporte e muito mais, além de dinheiro.",
+      "A pensão deve ser usada para os gastos do filho, e não como renda livre da mãe.",
+      "A pensão é direito da criança, não da mãe. Ela deve ser destinada às necessidades do filho.",
+      "Presentes e extras são bem-vindos, mas não substituem a obrigação da pensão.",
+      "Não existe um valor fixo universal. O juiz define caso a caso, considerando a necessidade do filho e a capacidade do responsável.",
+      "O simples fato de o filho trabalhar não extingue a pensão. Isso depende da sua real independência financeira."
+    ];
+
+    function revelar(card) {
+      const index = Array.from(document.querySelectorAll('.card')).indexOf(card);
+      card.classList.remove("mito");
+      card.classList.add("verdade");
+      card.innerHTML = `
+        <h3 class="label">✅ Verdade</h3>
+        <p>${verdades[index]}</p>
+      `;
+    }
+  </script>
+
+  <script>
+    // Adiciona um clique para cada ícone com o atributo data-page
+    document.querySelectorAll('.sidebar i').forEach(icon => {
+      icon.addEventListener('click', () => {
+        const page = icon.getAttribute('data-page');
+        if (page) {
+        window.location.href = page;
+      }
+    });
+  });
+</script>
+</body>
+</html>

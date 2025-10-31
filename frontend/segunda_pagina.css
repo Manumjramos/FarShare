@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.sidebar i {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.contact {
+    width: 300px;
+    background-color: #c5737f;
+    height: 200vh;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    height: fit-content;
+    margin-top: 20px;
+    
+}
+
+.contact h2 {
+    margin-top: 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color:#000;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    flex: 1;
+}
+
+.card {
+    background-color: #D3B1C2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3 ease, background-color 0.3 ease ;
+}
+
+.card:hover {
+    background-color: #f28b96;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.card h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        width: auto;
+        margin: 20px;
+    }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* isso mantém os ícones no topo e o footer no fim */
+  width: 60px;
+  height: 100vh;
+  background-color: #000;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar i {
+  font-size: 24px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar-footer {
+  text-align: center;
+  font-size: 10px;
+  color: #ccc;
+  padding-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+  font-size: 0.9rem;
+  color: #ffff;
+}
+
+/* Container geral com barra lateral e conteúdo */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar i:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+
+/* Conteúdo principal ao lado da barra */
+.content {
+  flex: 1;
+  margin-left: 60px; /* Espaço para a sidebar */
+  padding: 20px;
+}
+

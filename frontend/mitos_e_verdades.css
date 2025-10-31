@@ -1,0 +1,138 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #D3B1C2;
+  color: #333A33;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #333A33;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+/* ===== Container principal ===== */
+main {
+  flex: 1;
+  padding: 30px 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Card ===== */
+.card {
+  background: #ffffff;
+   border-left: 6px solid #d19a30;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card h3.label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333A33;
+  flex-grow: 1;
+}
+
+/* ===== Estilo mito e verdade ===== */
+.mito h3.label {
+  color: #333A33;
+}
+
+.verdade h3.label {
+  color: #27ae60;
+}
+
+/* ===== Botão revelar ===== */
+.revelar {
+  margin-top: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #F9E085;
+  color: #000000;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.revelar:hover {
+  background: #D3B1C2;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+

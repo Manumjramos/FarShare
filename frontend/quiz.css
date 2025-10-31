@@ -1,0 +1,153 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #D3B1C2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #333A33;
+}
+
+.subtitle {
+  color:#fff;
+  margin-top: 8px;
+}
+
+/* Main / Quiz */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+   border-left: 6px solid #d19a30;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 50px 40px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Opções */
+.option-btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 16px 0;
+  border: none;
+  border-radius: 12px;
+  background: #F9E085;
+  color: #000000;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.option-btn:hover {
+  background: #D3B1C2;
+}
+
+/* Botões */
+.next-btn, .restart-btn {
+  display: none;
+  margin: 25px auto 0;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.next-btn {
+  background: #27ae60;
+}
+
+.next-btn:hover {
+  background: #1e8449;
+}
+
+.restart-btn {
+  background: #e67e22;
+}
+
+.restart-btn:hover {
+  background: #d35400;
+}
+
+/* Feedback */
+.feedback {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+  font-size: 0.9rem;
+  color: #ffff;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+

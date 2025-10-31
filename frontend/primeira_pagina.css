@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: #D3B1C2;
+    position: absolute;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.sidebar i {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.questions {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.question {
+    height: 6vh;
+    background-color: #E597E0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.question:hover {
+    background-color: #D3B1C2;
+}
+
+.info {
+    flex: 1;
+    background-color: #F9E085;
+    border-radius: 10px;
+    padding: 15px;
+    color: #000000;
+    height: 87vh;
+}
+
+.info h2 {
+    text-align: center;
+}
+
+.chat-box {
+    grid-column: span 2;
+    background-color: #F9E085;
+    color: #000000;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.chat-box input{
+    width: 50%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+ 
+  .chat-box input:hover {
+    transform: scale(1.06);
+    cursor: pointer;
+  }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F9E085;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    display: none;
+    max-width: 400px;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.close-btn {
+    background-color: #F9E085;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #D3B1C2;
+    padding-top: 60px;
+  }
+
+  .modal p{
+    color: #000;
+  }
+
+  h4{
+    color: #000;
+  }
+
+  h3{
+    font-size: 17px;
+  }
+ 
+  .modal-content {
+    background: #E597E0;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    height: 25vh;
+  }
+
+  .close {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+ 
+  .close:hover,
+  .close:focus {
+    color: #D3B1C2;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #000;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Container geral com barra lateral e conteúdo */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar i:hover {
+  transform: scale(1.2);
+  color: #F9E085;
+}
+
+/* Conteúdo principal ao lado da barra */
+.content {
+  flex: 1;
+  margin-left: 60px; /* Espaço para a sidebar */
+  padding: 20px;
+}
+
+

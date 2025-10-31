@@ -1,0 +1,118 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #D3B1C2;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #333A33;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+/* ===== Container principal ===== */
+main {
+  flex: 1;
+  padding: 30px 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Card ===== */
+.card {
+  background: #fff;
+   border-left: 6px solid #d19a30;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #333A33(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px #333A33(0,0,0,0.12);
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #333A33;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333A33;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+

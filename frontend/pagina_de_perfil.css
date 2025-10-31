@@ -1,0 +1,148 @@
+:root {
+  --cor-fundo: #D3B1C2;
+  --cor-card: #ffffff;
+  --cor-texto: #333A33;
+  --cor-botao: #F9E085;
+  --cor-botao-hover: #D3B1C2;
+}
+
+body.dark-mode {
+  --cor-fundo: #000000;
+  --cor-card: #333A33;
+  --cor-texto: #ffffff;
+  --cor-botao: #F9E085;
+  --cor-botao-hover: #D3B1C2;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--cor-texto);
+  
+}
+
+#toggle-dark-mode {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+section {
+  background: var(--cor-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: var(--cor-texto);
+}
+
+input, textarea {
+  width: 90%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: var(--cor-botao);
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--cor-botao-hover);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  background: var(--cor-fundo);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffffff;
+  text-align: center;
+  padding: 1px;
+  margin-top: 2rem;
+}
+
+/* Barra lateral preta fixa */
+.sidebar {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Ícones dentro da sidebar */
+.sidebar i {
+  font-size: 24px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#userForm{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
